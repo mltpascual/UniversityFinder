@@ -1,22 +1,30 @@
 $(function() {
-    const CORS_PROXY = "https://cors.bridged.cc/";
-
     const fetchCountries = async () => {
         const response = await fetch('https://restcountries.com/v3.1/all');
         const data = await response.json();
         return data.map(country => country.name.common);
     };
 
-    const fetchUniversities = async country => {
+    const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
+
+    const fetchUniversities = async (country) => {
         $('#spinner').removeClass('hidden');
-        const response = await fetch(`${CORS_PROXY}http://universities.hipolabs.com/search?country=${encodeURIComponent(country)}`);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+        try {
+            const response = await fetch(`${CORS_PROXY}http://universities.hipolabs.com/search?country=${encodeURIComponent(country)}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            console.log('Universities fetched:', data);
+            $('#spinner').addClass('hidden');
+            return data;
+        } catch (error) {
+            $('#spinner').addClass('hidden');
+            console.error('Error fetching universities:', error);
+            $('#output').html('<p class="text-red-500">Error fetching data. Please try again later.</p>');
         }
-        const data = await response.json();
-        $('#spinner').addClass('hidden');
-        return data;
     };
+    
 
     const renderUniversities = universities => {
         const output = universities.map(university => `
