@@ -45,6 +45,9 @@ Welcome to the University Finder! This web application allows you to search for 
 4. Add universities to your favorites by clicking the "Add to Favorites" button.
 5. View your favorite universities by clicking the "View Favorites" button.
 
+## 🌐 Live Demo
+Check out the live demo of the [University Finder](https://tailwindcss.com/)
+
 ## 📷 Screenshots
 ### Main Search Interface
 ![Main Interface](./images/main-interface.png)
