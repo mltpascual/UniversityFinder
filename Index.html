@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body class="bg-gray-100 overflow-x-hidden">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-blue-600 text-white py-2 shadow-lg w-full">
+            <div class="container mx-auto flex items-center justify-between px-4">
+                <h1 class="text-2xl font-bold">University Finder</h1>
+                <div class="flex items-center space-x-2">
+                    <input id="country" type="text" placeholder="Enter country" class="px-4 py-2 rounded-l-md border-0 focus:ring-2 focus:ring-blue-300 text-black">
+                    <button id="searchButton" class="bg-blue-500 px-4 py-2 rounded-r-md hover:bg-blue-700">Search</button>
+                    <button id="viewFavoritesButton" class="bg-green-500 px-4 py-2 rounded-md hover:bg-green-700">View Favorites</button>
+                </div>
+            </div>
+        </header>
+        <!-- Main content -->
+        <div class="container mx-auto flex flex-1 px-4 py-4">
+            <main class="flex-1">
+                <h2 class="text-3xl font-bold mb-6">Search Results</h2>
+                <div id="universitySearchContainer" class="mb-6 hidden">
+                    <input id="universitySearch" type="text" placeholder="Search university" class="px-4 py-2 rounded-md border focus:ring-2 focus:ring-blue-300 text-black w-full">
+                </div>
+                <div id="output" class="space-y-4">Enter a country and click Search</div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="spinner" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
+        <div class="loader border-t-4 border-b-4 border-blue-500 rounded-full w-16 h-16"></div>
+    </div>
+
+    <!-- University Details Modal -->
+    <div id="universityModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
+            <button id="closeModal" class="text-red-500">Close</button>
+            <div id="universityDetails"></div>
+        </div>
+    </div>
+
+    <!-- Favorites Modal -->
+    <div id="favoritesModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full h-3/4 overflow-y-auto">
+            <button id="closeFavoritesModal" class="text-red-500">Close</button>
+            <div id="favoritesList"></div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
