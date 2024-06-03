@@ -7,7 +7,7 @@ $(function() {
 
     const fetchUniversities = async country => {
         $('#spinner').removeClass('hidden');
-        const response = await fetch(`http://universities.hipolabs.com/search?country=${encodeURIComponent(country)}`);
+        const response = await fetch(`https://universities.hipolabs.com/search?country=${encodeURIComponent(country)}`);
         const data = await response.json();
         $('#spinner').addClass('hidden');
         return data;
