@@ -47,10 +47,13 @@ Welcome to the University Finder! This web application allows you to search for 
 
 ## 📷 Screenshots
 ### Main Search Interface
+![Main Interface](./images/main-interface.png)
 
 ### Search Results
+![Search Results](./images/search-results.png)
 
 ### Favorites Modal
+![Favorites Modal](./images/favorites-modal.png)
 
 
 ## 🙏 Acknowledgements
