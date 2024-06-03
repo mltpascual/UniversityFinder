@@ -11,7 +11,7 @@ Welcome to the University Finder! This web application allows you to search for 
 - 📜 **Scrollable Modals**: Easily scroll through long lists of favorites.
 
 ## 🌐 Live Demo
-Check out the live demo of the [University Finder](https://tailwindcss.com/)
+Check out the live demo of the [University Finder](https://mltpascual.github.io/UniversityFinder/)
 
 ## 🛠️ Technologies Used
 
