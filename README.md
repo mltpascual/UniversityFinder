@@ -7,7 +7,6 @@ Welcome to the University Finder! This web application allows you to search for 
 - 🌍 **Search by Country**: Enter a country to get a list of universities.
 - 🔍 **University Search**: Filter universities within the search results.
 - 💾 **Save Favorites**: Save your favorite universities and view them later.
-- 📍 **Map Integration**: View the location of universities on a map.
 - 📜 **Scrollable Modals**: Easily scroll through long lists of favorites.
 
 ## 🌐 Live Demo
