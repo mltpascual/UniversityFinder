@@ -10,6 +10,9 @@ Welcome to the University Finder! This web application allows you to search for 
 - 📍 **Map Integration**: View the location of universities on a map.
 - 📜 **Scrollable Modals**: Easily scroll through long lists of favorites.
 
+## 🌐 Live Demo
+Check out the live demo of the [University Finder](https://tailwindcss.com/)
+
 ## 🛠️ Technologies Used
 
 - HTML
@@ -44,9 +47,6 @@ Welcome to the University Finder! This web application allows you to search for 
 3. Filter universities using the search box that appears after searching for a country.
 4. Add universities to your favorites by clicking the "Add to Favorites" button.
 5. View your favorite universities by clicking the "View Favorites" button.
-
-## 🌐 Live Demo
-Check out the live demo of the [University Finder](https://tailwindcss.com/)
 
 ## 📷 Screenshots
 ### Main Search Interface
