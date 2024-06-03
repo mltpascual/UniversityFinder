@@ -1,4 +1,6 @@
 $(function() {
+    const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
+
     const fetchCountries = async () => {
         const response = await fetch('https://restcountries.com/v3.1/all');
         const data = await response.json();
@@ -7,7 +9,7 @@ $(function() {
 
     const fetchUniversities = async country => {
         $('#spinner').removeClass('hidden');
-        const response = await fetch(`https://universities.hipolabs.com/search?country=${encodeURIComponent(country)}`);
+        const response = await fetch(`${CORS_PROXY}http://universities.hipolabs.com/search?country=${encodeURIComponent(country)}`);
         const data = await response.json();
         $('#spinner').addClass('hidden');
         return data;
