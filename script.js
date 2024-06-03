@@ -1,5 +1,5 @@
 $(function() {
-    const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
+    const CORS_PROXY = "https://cors.bridged.cc/";
 
     const fetchCountries = async () => {
         const response = await fetch('https://restcountries.com/v3.1/all');
@@ -10,6 +10,9 @@ $(function() {
     const fetchUniversities = async country => {
         $('#spinner').removeClass('hidden');
         const response = await fetch(`${CORS_PROXY}http://universities.hipolabs.com/search?country=${encodeURIComponent(country)}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
         const data = await response.json();
         $('#spinner').addClass('hidden');
         return data;
@@ -65,13 +68,17 @@ $(function() {
                 $('#output').html('<p class="text-red-500">Please enter a country.</p>');
                 return;
             }
-            const universities = await fetchUniversities(country);
-            if (universities.length === 0) {
-                $('#output').html('<p class="text-red-500">No universities found for the selected country.</p>');
-                return;
+            try {
+                const universities = await fetchUniversities(country);
+                if (universities.length === 0) {
+                    $('#output').html('<p class="text-red-500">No universities found for the selected country.</p>');
+                    return;
+                }
+                $('#universitySearchContainer').removeClass('hidden');
+                renderUniversities(universities);
+            } catch (error) {
+                $('#output').html('<p class="text-red-500">Error fetching data. Please try again later.</p>');
             }
-            $('#universitySearchContainer').removeClass('hidden');
-            renderUniversities(universities);
         });
 
         $('#country').keypress(async event => {
